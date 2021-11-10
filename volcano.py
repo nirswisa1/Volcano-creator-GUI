@@ -10,7 +10,7 @@ pval = ''; spec = ''
 i = 0; i2 = 0
 selection = ''
 
-
+#"Run" button event
 def myClick():
     global excelN; global title
     global fcmin; global fcmax
@@ -57,6 +57,7 @@ fcE.grid(row=2, column=1, sticky='W')
 fcE1.grid(row=2, column=1, sticky='E')
 pvalE.grid(row=3, column=1)
 specE.grid(row=6, column=1)
+
 # Check box
 var = IntVar()
 c = Checkbutton(root, text="All labels", variable=var)
@@ -104,6 +105,7 @@ for row in range(2, len(ws["F"]) + 1):
 ws["F1"].value = '-Log p-Val'
 wb.save(excelN + '.xlsx')
 
+#plot
 pval = [i.value for i in ws["F"]]
 fold = [i.value for i in ws["D"]]
 
